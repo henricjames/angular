@@ -8,22 +8,21 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  test:any;
+  users:any;
   loading:any
-  Changer:String
   sortoptions=Array("first_name","lastname",undefined)
-
+  selectedName:any;
 
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.loading = true;
-    var url ="https://reqres.in/api/users?delay=0";
+    var url ="https://reqres.in/api/users?delay=3";
     this.http.get(url).subscribe(data=>
       {
-        this.test=data['data'];
-        console.log(this.test);
+        this.users=data['data'];
+        console.log(this.users);
         this.loading = false;
       }
     )
@@ -32,8 +31,19 @@ export class TestComponent implements OnInit {
 
   }
 
-  onOptionsSelected(value){
- console.log(value);
+  sortvalues(value){
+
+ this.users.sort((a,b) =>{
+   let x=(a[this.selectedName]);
+   let y=(b[this.selectedName]);
+   if(x>y)
+ {
+   return 1
+ }
+ else{
+   return -1
+ }
+ })
   }
 
   getap()
@@ -42,8 +52,8 @@ export class TestComponent implements OnInit {
     var url ="https://reqres.in/api/users?delay=0";
     this.http.get(url).subscribe(data=>
       {
-        this.test=data['data'];
-        console.log(this.test);
+        this.users=data['data'];
+        console.log(this.users);
         this.loading = false;
       }
     )

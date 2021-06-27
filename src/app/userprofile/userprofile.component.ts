@@ -10,6 +10,7 @@ export class UserprofileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("hello");
   }
 
 }

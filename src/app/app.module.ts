@@ -9,6 +9,7 @@ import { SortnamePipe } from './sortname.pipe';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +18,13 @@ import { FormsModule } from '@angular/forms';
     UserprofileComponent,
 
 
+
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

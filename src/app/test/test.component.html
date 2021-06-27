@@ -1,33 +1,29 @@
 
 <img *ngIf="loading" src="assets/1488.gif" />
-<div ng-app="myApp" ng-controller="myCtrl">
 
+<div *ngIf="! loading" class="container">
+  sort by:<select [(ngModel)]="selectedName" (change)='sortvalues()'>
+    <option value="first_name">first_name</option>
+    <option value="last_name">last_name</option>
+    </select>
 
-<select class='select-option'
-    #mySelect
-    (change)='onOptionsSelected(mySelect.value)'>
-   <option class='option'
-   *ngFor='let option of sortoptions'
-   [value]="option">{{option}}</option>
-</select>
-<div class="container">
-  <div class="user_wrapper row">
-    <div *ngFor="let tests of test | sortname">
-      <div routerLink='hello' class="users col">
+  <div class="row">
+    <div *ngFor="let user of users">
+      <div routerLink='hello' class="users col-6">
         <a routerLink='hello'></a>
-        <img src="{{ tests.avatar }}" />
+        <img src="{{ user.avatar }}" />
         <div>
-          {{ tests.id }}
+          {{ user.id }}
         </div>
         <div>
-          {{ tests.email }}
+          {{ user.email }}
         </div>
 
         <div>
-          {{ tests.first_name }}
+          firstname:{{ user.first_name }}
         </div>
         <div>
-          {{ tests.last_name }}
+          lastname:{{ user.last_name }}
         </div>
       </div>
     </div>
