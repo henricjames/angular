@@ -1,0 +1,38 @@
+
+<img *ngIf="loading" src="assets/1488.gif" />
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+<select class='select-option'
+    #mySelect
+    (change)='onOptionsSelected(mySelect.value)'>
+   <option class='option'
+   *ngFor='let option of sortoptions'
+   [value]="option">{{option}}</option>
+</select>
+<div class="container">
+  <div class="user_wrapper row">
+    <div *ngFor="let tests of test | sortname">
+      <div routerLink='hello' class="users col">
+        <a routerLink='hello'></a>
+        <img src="{{ tests.avatar }}" />
+        <div>
+          {{ tests.id }}
+        </div>
+        <div>
+          {{ tests.email }}
+        </div>
+
+        <div>
+          {{ tests.first_name }}
+        </div>
+        <div>
+          {{ tests.last_name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
