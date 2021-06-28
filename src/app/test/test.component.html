@@ -9,8 +9,8 @@
 
   <div class="row">
     <div *ngFor="let user of users">
-      <div routerLink='hello' class="users col-6">
-        <a routerLink='hello'></a>
+      <div routerLink="userprofile/{{ user.id }}" class="users col-12">
+
         <img src="{{ user.avatar }}" />
         <div>
           {{ user.id }}

@@ -1,0 +1,12 @@
+.users{
+  padding:10px;
+  margin:10px;
+  border:1px solid;
+  width:400px;
+  height:500px;
+}
+
+.users img{
+  width:250px;
+  height:250px;
+}
